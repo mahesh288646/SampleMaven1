@@ -9,6 +9,7 @@ pipeline {
         stage('Checkout'){
             steps {
                  deleteDir()
+                 sh 'echo after deleteDir....'
                  checkout([
                      $class: 'GitSCM',
                      branches: [[name: '*/master/Release1.1']],
