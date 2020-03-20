@@ -11,7 +11,7 @@ pipeline {
                  deleteDir()
                  checkout([
                      $class: 'GitSCM',
-                     branches: [[name: '*/master/Release']],
+                     branches: [[name: '*/master/Release1.1']],
                      doGenerateSubmoduleConfigurations: false,
                      extensions: [[$class: 'CleanCheckout']],
                      submoduleCfg: [],
