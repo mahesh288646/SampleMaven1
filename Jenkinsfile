@@ -8,12 +8,19 @@ pipeline {
     stages {
         stage('Checkout'){
             steps {
-                checkout scm
+                 checkout([
+                     $class: 'GitSCM',
+                     branches: [[name: '*/master']],
+                     doGenerateSubmoduleConfigurations: false,
+                     extensions: [[$class: 'CleanCheckout']],
+                     submoduleCfg: [],
+                     userRemoteConfigs: [[credentialsId: 'Azure-GIT-ID', url: 'https://maheshbadenehal@dev.azure.com/maheshbadenehal/MyFirstProject/_git/Sample1']]
+                 ])
             }
         }
         stage('Build') {
             steps {
-                sh 'echo Mahesh'
+                sh 'echo Mahesh-From-Release1.1'
                 //sh 'mvn --version'
                 //sh 'mvn clean'
                 sh 'mvn clean install'
