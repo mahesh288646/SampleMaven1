@@ -12,7 +12,7 @@ pipeline {
                  sh 'echo after deleteDir....'
                  checkout([
                      $class: 'GitSCM',
-                     branches: [[name: '*/master/Release1.1/']],
+                     branches: [[name: '*/master/Release1.1/*']],
                      doGenerateSubmoduleConfigurations: false,
                      extensions: [[$class: 'CleanCheckout']],
                      submoduleCfg: [],
