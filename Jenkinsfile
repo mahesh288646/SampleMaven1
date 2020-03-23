@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'echo Mahesh-From-Release1.1 on March 22 2020 Mahesh Babu Divya Tanvi Arjunnnnnn'
+                sh 'echo Mahesh-From-Release1.1 on March 22 2020 Mahesh Babu Divya Tanvi Arjunnnnnmmmmn'
                 //sh 'mvn --version'
                 //sh 'mvn clean'
                 sh 'mvn clean install'
