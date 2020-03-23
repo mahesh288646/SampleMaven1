@@ -17,7 +17,7 @@ pipeline {
                      doGenerateSubmoduleConfigurations: false,
                      extensions: [[$class: 'CleanCheckout']],
                      submoduleCfg: [],
-                     userRemoteConfigs: [[credentialsId: 'Azure-GIT-ID', url: 'https://maheshbadenehal@dev.azure.com/maheshbadenehal/MyFirstProject/_git/Sample1']]
+                     userRemoteConfigs: [[credentialsId: 'Git-ID', url: 'https://github.com/mahesh288646/SampleMaven1.git']]
                  ])
             }
         }
