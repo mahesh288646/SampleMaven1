@@ -9,6 +9,7 @@ pipeline {
         stage('Checkout'){
             steps {
                  deleteDir()
+                 sh 'sleep 60'
                  sh 'echo after deleteDir....'
                  checkout([
                      $class: 'GitSCM',
