@@ -18,11 +18,11 @@ checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], user
             steps {
                 sh 'echo Mahesh-From-Release1.1 on March 22 2020 Mahesh Babu Divya Tanvi Arjunnnnnmmmmn'
                 load 'staging.groovy'
-		echo "${env.DB_URL}"
-   		echo "${env.DB_URL2}"
-                load 'dev_abc.txt'
-		echo "${env.MONGO_URL}"
-		echo "${MONGO_URL3}"
+		kubeconfig(credentialsId: 'kube1', serverUrl: '') {
+    			kubectl get nodes
+			kubectl get pods | grep -i ${MONGO_URL3}
+	
+}
 		//sh 'mvn --version'
                 //sh 'mvn clean'
                 //sh 'mvn clean install'
