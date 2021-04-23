@@ -22,6 +22,7 @@ checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], user
    		echo "${env.DB_URL2}"
                 load 'dev_abc.txt'
 		echo "${env.MONGO_URL}"
+		echo "${MONGO_URL3}"
 		//sh 'mvn --version'
                 //sh 'mvn clean'
                 //sh 'mvn clean install'
