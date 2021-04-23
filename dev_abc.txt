@@ -1,3 +1,2 @@
-env="dev"
-application="abc"
-mongo-url="abc-mongo:1234"
+env.MONGO_URL="hellomongo"
+env.MONGO_URL2="hellomongo2"
