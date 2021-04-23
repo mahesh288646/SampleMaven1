@@ -11,14 +11,7 @@ pipeline {
                  deleteDir()
 
                  sh 'echo after deleteDir....'
-                 checkout([
-                     $class: 'GitSCM',
-                     branches: [[name: '*/master/*']],
-                     doGenerateSubmoduleConfigurations: false,
-                     extensions: [[$class: 'CleanCheckout']],
-                     submoduleCfg: [],
-                     userRemoteConfigs: [[credentialsId: 'Git-ID', url: 'https://github.com/mahesh288646/SampleMaven1.git']]
-                 ])
+checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/mahesh288646/SampleMaven1.git']]])
             }
         }
         stage('Build') {
@@ -26,7 +19,7 @@ pipeline {
                 sh 'echo Mahesh-From-Release1.1 on March 22 2020 Mahesh Babu Divya Tanvi Arjunnnnnmmmmn'
                 //sh 'mvn --version'
                 //sh 'mvn clean'
-                sh 'mvn clean install'
+                //sh 'mvn clean install'
             }
         }
 
