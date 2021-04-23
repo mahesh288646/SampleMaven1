@@ -17,7 +17,10 @@ checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], user
         stage('Build') {
             steps {
                 sh 'echo Mahesh-From-Release1.1 on March 22 2020 Mahesh Babu Divya Tanvi Arjunnnnnmmmmn'
-                //sh 'mvn --version'
+                load 'dev_abc.txt'
+		sh 'more dev_abc.txt'
+                sh '$env'
+		//sh 'mvn --version'
                 //sh 'mvn clean'
                 //sh 'mvn clean install'
             }
