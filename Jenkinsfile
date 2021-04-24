@@ -31,7 +31,7 @@ checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], user
                 sh 'echo Mahesh-From-Release1.1 on March 22 2020 Mahesh Babu Divya Tanvi Arjunnnnnmmmmn'
                 load 'dev.groovy'
 		        script {
-          kubernetesDeploy(configs: "$WORKSPACE/${env.DB_URL2}/*", kubeconfigId: "mykubeconfig")
+          kubernetesDeploy(configs: "**/manifests/${env.DB_URL2}/*", kubeconfigId: "mykubeconfig")
         }
             }
         }
@@ -40,7 +40,7 @@ checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], user
                 sh 'echo Mahesh-From-Release1.1 on March 22 2020 Mahesh Babu Divya Tanvi Arjunnnnnmmmmn'
                 load 'qa.groovy'
 		        script {
-          kubernetesDeploy(configs: "**/${env.DB_URL2}/*", kubeconfigId: "mykubeconfig")
+          kubernetesDeploy(configs: "**/manifests/${env.DB_URL2}/*", kubeconfigId: "mykubeconfig")
         }
             }
         }
