@@ -1,18 +1,18 @@
-apiVersion: apps/v1
+apiVersion: apps/v2
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: nginx-deployment-qa
   labels:
-    app: nginx-qa
+    app: nginx
 spec:
   replicas: 3
   selector:
     matchLabels:
-      nginx-qa
+      app: nginx
   template:
     metadata:
       labels:
-        nginx-qa
+        app: nginx
     spec:
       containers:
       - name: nginx-qa
