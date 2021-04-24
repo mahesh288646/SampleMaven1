@@ -20,7 +20,7 @@ checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], user
                 echo '$WORKSPACE'
                 load 'staging.groovy'
 		        script {
-          kubernetesDeploy(configs: "deployment.yaml", kubeconfigId: "mykubeconfig")
+          kubernetesDeploy(configs: "./dev/deployment.yaml", kubeconfigId: "mykubeconfig")
         }
 		//sh 'mvn --version'
                 //sh 'mvn clean'
