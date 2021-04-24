@@ -31,9 +31,9 @@ checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], user
         stage('Deploying-Dev') {
             steps {
                 sh 'echo Mahesh-From-Release1.1 on March 22 2020 Mahesh Babu Divya Tanvi Arjunnnnnmmmmn'
-                app_environment = "./AdminRepo/$application_name/dev/dev_crazy.txt"
-                load './AdminRepo/$application_name/dev/dev_crazy.txt'
-                echo '$environment'
+                //def app_environment = "./AdminRepo/$application_name/dev/dev_crazy.txt"
+                load "./AdminRepo/$app_environment/dev/dev_crazy.txt"
+                echo "$environment"
 		        script {
           kubernetesDeploy(configs: "**/manifests/${environment}/*", kubeconfigId: "mykubeconfig")
         }
