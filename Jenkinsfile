@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout-AdminRepo'){
             steps {
-                 cleanWs()
+                 //cleanWs()
 
                  sh 'echo after deleteDir....'
                  dir('AdminRepo') {
