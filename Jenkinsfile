@@ -33,7 +33,7 @@ checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], user
                 load './AdminRepo/crazy/dev/dev_crazy.txt'
                 
 		        script {
-          kubernetesDeploy(configs: "**/manifests/${env.DB_URL2}/*", kubeconfigId: "mykubeconfig")
+          kubernetesDeploy(configs: "**/manifests/${environment}/*", kubeconfigId: "mykubeconfig")
         }
             }
         }
@@ -42,7 +42,7 @@ checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], user
                 sh 'echo Mahesh-From-Release1.1 on March 22 2020 Mahesh Babu Divya Tanvi Arjunnnnnmmmmn'
                 load './AdminRepo/crazy/qa/qa_crazy.txt'
 		        script {
-          kubernetesDeploy(configs: "**/manifests/${env.DB_URL2}/*", kubeconfigId: "mykubeconfig")
+          kubernetesDeploy(configs: "**/manifests/${environment}/*", kubeconfigId: "mykubeconfig")
         }
             }
         }
