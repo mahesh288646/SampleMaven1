@@ -13,7 +13,8 @@ pipeline {
                  sh 'echo after deleteDir....'
                  dir('AdminRepo') {
                  checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/mahesh288646/Admin_REPO.git']]])
-                 sh 'ls -lrt && pwd'
+                 sh 'ls -lrt'
+                 sh 'pwd'
                  }
             }
         }
