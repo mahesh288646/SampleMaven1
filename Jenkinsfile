@@ -24,7 +24,7 @@ pipeline {
 
                  sh 'echo after deleteDir....'
 checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/mahesh288646/SampleMaven1.git']]])
-            load 'application.properties'
+            //load 'application.properties'
             }
         }
         stage('Deploying-Dev') {
