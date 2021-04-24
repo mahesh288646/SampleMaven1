@@ -13,13 +13,12 @@ pipeline {
                  sh 'echo after deleteDir....'
                  dir('AdminRepo') {
                  checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/mahesh288646/Admin_REPO.git']]])
-                 //load '**/crazy/dev/dev_crazy.txt'
-                  }
+                 }
             }
         }
         stage('Checkout'){
             steps {
-                 deleteDir()
+                 //deleteDir()
 
                  sh 'echo after deleteDir....'
 checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/mahesh288646/SampleMaven1.git']]])
@@ -38,8 +37,7 @@ checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], user
             steps {
                 sh 'echo Mahesh-From-Release1.1 on March 22 2020 Mahesh Babu Divya Tanvi Arjunnnnnmmmmn'
                 load 'qa.groovy'
-		        echo "${env.DB_URL2}"
-                script {
+		        script {
           kubernetesDeploy(configs: "**/${env.DB_URL2}/*", kubeconfigId: "mykubeconfig")
         }
             }
