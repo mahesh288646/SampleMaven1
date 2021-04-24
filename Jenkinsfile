@@ -19,7 +19,7 @@ checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], user
                 sh 'echo Mahesh-From-Release1.1 on March 22 2020 Mahesh Babu Divya Tanvi Arjunnnnnmmmmn'
                 load 'staging.groovy'
 		        script {
-          kubernetesDeploy(configs: "**/dev/*", kubeconfigId: "mykubeconfig")
+          kubernetesDeploy(configs: "**/${env.DB_URL2}/*", kubeconfigId: "mykubeconfig")
         }
 		//sh 'mvn --version'
                 //sh 'mvn clean'
