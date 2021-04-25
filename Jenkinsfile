@@ -23,6 +23,7 @@ pipeline {
         stage('Deploying-Dev') {
             steps {
                 load "./AdminRepo/${application_name}/dev/dev_crazy.txt"
+                sh "sed -i 's/application_name/${application_name}/g' ./manifests/dev/deployment.yaml"
                 script {
                     kubernetesDeploy(configs: "**/manifests/${environment}/*", kubeconfigId: "mykubeconfig")
                         }
