@@ -23,6 +23,7 @@ pipeline {
         stage('Deploying-Dev') {
             steps {
                 load "./AdminRepo/${application_name}/dev/dev_crazy.txt"
+                sh "mkdir dev qa manifests && cp deployment.yaml ./dev && cp deployment.yaml ./qa"
                 sh "sed -i 's/application_name/${application_name}/g' ./manifests/dev/deployment.yaml"
                 sh "sed -i 's/replicas_count/${replicas}/g' ./manifests/dev/deployment.yaml"
                 script {
