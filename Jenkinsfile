@@ -18,8 +18,7 @@ pipeline {
             steps {
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/mahesh288646/SampleMaven1.git']]])
                 load "application.properties"
-                echo "${application_name}"
-            }
+                  }
         }
         stage('Deploying-Dev') {
             steps {
@@ -39,4 +38,3 @@ pipeline {
                                 }
     }
 }
-
