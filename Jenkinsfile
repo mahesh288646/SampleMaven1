@@ -33,6 +33,8 @@ pipeline {
         stage('Deploying-QA') {
             steps {
                 load "./AdminRepo/${application_name}/qa/qa_crazy.txt"
+                sh "sed -i 's/application_name/${application_name}/g' ./manifests/qa/deployment.yaml"
+                sh "sed -i 's/replicas_count/${replicas}/g' ./manifests/qa/deployment.yaml"
 		        script {
                     kubernetesDeploy(configs: "**/manifests/${environment}/*", kubeconfigId: "mykubeconfig")
                         }

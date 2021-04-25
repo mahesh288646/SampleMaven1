@@ -1,7 +1,7 @@
-apiVersion: apps/v2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment-qa
+  name: application_name-deployment
   labels:
     app: application_name
 spec:
