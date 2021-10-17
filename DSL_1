@@ -1,34 +1,3 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@mahesh288646 
-mahesh288646
-/
-dsl
-Public
-0
-00
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-dsl/DSL_7
-@mahesh288646
-mahesh288646 sample
-Latest commit b076379 on Jul 12, 2020
- History
- 1 contributor
-66 lines (61 sloc)  1.52 KB
-   
 import data.*
 println JOB_NAME
 Properties props = new Properties()
@@ -95,16 +64,3 @@ multibranchPipelineJob("$AppName1") {
 //{
 //triggerWithNoParameters(true)
 //}
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-Loading complete
