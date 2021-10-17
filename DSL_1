@@ -1,21 +1,110 @@
-job('DSL-Tutorial-3-Test') {
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@mahesh288646 
+mahesh288646
+/
+dsl
+Public
+0
+00
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+dsl/DSL_7
+@mahesh288646
+mahesh288646 sample
+Latest commit b076379 on Jul 12, 2020
+ History
+ 1 contributor
+66 lines (61 sloc)  1.52 KB
+   
+import data.*
+println JOB_NAME
+Properties props = new Properties()
+File propsFile = new File('/var/lib/jenkins/workspace/SampleDSL3/data/environment.properties')
+props.load(propsFile.newDataInputStream())
+println props.getProperty('Env')
+def AppName1 = props.getProperty('AppName')
+def GitNam = props.getProperty('GitName')
+def AppType = props.getProperty('AppType')
+def GitName = "https://github.com/mahesh288646/$GitNam"
+//def GitName = "https://github.com/mahesh288646/SimpleMaven1.git"
+println props.getProperty('AppName')
 
-    scm {
+if ('String $AppType==SpringBoot')
+{
+println("This is springboot space")
+multibranchPipelineJob("$AppName1") {
+    branchSources {
+        git {
+            id('12121213') // IMPORTANT: use a constant and unique identifier mahesh
+            remote("$GitName")
+            credentialsId('Git-ID')
 
-        checkout([
-                $class                           : 'GitSCM',
-                branches                         : [[name: '*/master/Release1.1/*']],
-                doGenerateSubmoduleConfigurations: false,
-                extensions                       : [[$class: 'CleanCheckout']],
-                submoduleCfg                     : [],
-                userRemoteConfigs                : [[credentialsId: 'Azure-GIT-ID', url: 'https://maheshbadenehal@dev.azure.com/maheshbadenehal/MyFirstProject/_git/Sample1']]
-        ])
+        }
+    }
+    orphanedItemStrategy {
+        discardOldItems {
+            numToKeep(0)
+        }
     }
 
-
+triggers {
+//dos("sample") {}
+    job('example') {
     steps {
-        //maven('-e clean test')
-        //println("Mahesh Babu")
-        shell "echo Maheshhhhhhhhh"
+        nodejsCommand('console.log("Hello World!")', 'Node 12.18.0')
     }
 }
+}
+
+}
+} else
+if ($AppType==Angular)
+{
+println("This is Angular space")
+multibranchPipelineJob("$AppName1") {
+    branchSources {
+        git {
+            id('12121212') // IMPORTANT: use a constant and unique identifier mahesh
+            remote("$GitName")
+            credentialsId('Git-ID')
+
+        }
+    }
+    orphanedItemStrategy {
+        discardOldItems {
+            numToKeep(0)
+        }
+    }
+}
+} 
+//Mahesh
+//trigger("Deployment")
+//{
+//triggerWithNoParameters(true)
+//}
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Loading complete
