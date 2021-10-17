@@ -8,8 +8,10 @@ def AppName1 = props.getProperty('AppName')
 def GitNam = props.getProperty('GitName')
 def AppType = props.getProperty('AppType')
 def GitName = "https://github.com/mahesh288646/$GitNam"
+def AESGitName = "https://github.com/mahesh288646/dsl.git"
 //def GitName = "https://github.com/mahesh288646/SimpleMaven1.git"
 println props.getProperty('AppName')
+
 
 if ('String $AppType==SpringBoot')
 {
@@ -19,6 +21,12 @@ multibranchPipelineJob("$AppName1") {
         git {
             id('12121213') // IMPORTANT: use a constant and unique identifier mahesh
             remote("$GitName")
+            credentialsId('Git-ID')
+
+        }
+         git {
+            id('12121213') // IMPORTANT: use a constant and unique identifier mahesh
+            remote("$AESGitName")
             credentialsId('Git-ID')
 
         }
@@ -48,6 +56,12 @@ multibranchPipelineJob("$AppName1") {
         git {
             id('12121212') // IMPORTANT: use a constant and unique identifier mahesh
             remote("$GitName")
+            credentialsId('Git-ID')
+
+        }
+        git {
+            id('12121213') // IMPORTANT: use a constant and unique identifier mahesh
+            remote("$AESGitName")
             credentialsId('Git-ID')
 
         }
