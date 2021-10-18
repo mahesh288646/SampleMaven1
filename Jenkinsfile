@@ -1,3 +1,4 @@
+@Library('pipeline-library-demo')
 pipeline {
     agent any
          tools {
