@@ -1,4 +1,4 @@
-@Library('pipeline-library-demo') import static org.foo.Utilities.*
+@Library('pipeline-library-demo') import static org.foo.Zot.*
 checkOutFrom("https://github.com/mahesh288646/SampleMaven1.git")
 stage('Demo') {
      echo 'Hello world'
