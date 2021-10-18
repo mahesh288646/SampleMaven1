@@ -1,7 +1,5 @@
 @Library('pipeline-library-demo') import static org.foo.Utilities.*
-node {
-  mvn this, 'clean package'
-}
+checkOutFrom("https://github.com/mahesh288646/SampleMaven1.git")
 stage('Demo') {
      echo 'Hello world'
      sayHello 'Dave'
