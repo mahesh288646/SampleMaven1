@@ -1,4 +1,7 @@
-@Library('pipeline-library-demo')_
+@Library('pipeline-library-demo') import static org.foo.Utilities.*
+node {
+  mvn this, 'clean package'
+}
 stage('Demo') {
      echo 'Hello world'
      sayHello 'Dave'
