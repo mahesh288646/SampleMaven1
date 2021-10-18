@@ -1,11 +1,4 @@
 @Library('pipeline-library-demo') import static org.foo.Zot.*
 
 
-stage('Demo') {
-     echo 'Hello world'
-     sayHello 'Dave'
- script{
- def Zot = new check()
- check.checkOutFrom("https://github.com/mahesh288646/SampleMaven1.git")
- }
- }
+job: SampleDSL3
