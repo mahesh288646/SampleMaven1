@@ -5,7 +5,9 @@ stage('Trigger Branch Build') {
             script {
                     echo "Triggering job for branch ${env.BRANCH_NAME}"
                     BRANCH_TO_TAG=env.BRANCH_NAME.replace("/","%2F")
-                    build job: "SampleDSL3", wait: false
+                    build job: "SampleDSL3", parameters:[
+                            string(name: 'Branch',value: 'valueOfParam1')
+                            ]
             }
         
     }
