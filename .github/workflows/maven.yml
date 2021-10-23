@@ -34,4 +34,4 @@ jobs:
         # Version Spec of the version to use.  Examples: 10.x, 10.15.1, >=10.15.0
         maven-version: 3.6.1
     - name: Build with Maven
-      run: mvn -v
+      run: mvn -B package --file pom.xml
