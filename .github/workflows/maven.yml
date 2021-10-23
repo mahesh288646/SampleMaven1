@@ -27,4 +27,4 @@ jobs:
       with:
         mirrors: '[{"id": "myid", "name": "myname", "mirrorOf": "myid", "url": "http://sample.com"}]'
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: mvn -v
