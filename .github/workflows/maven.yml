@@ -22,10 +22,10 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
         cache: maven
-    - name: maven-settings-action
-      uses: s4u/maven-settings-action@v2.4.1
-      with:
-        mirrors: '[{"id": "myid", "name": "myname", "mirrorOf": "myid", "url": "http://sample.com"}]'
+    #- name: maven-settings-action
+    #  uses: s4u/maven-settings-action@v2.4.1
+    #  with:
+    #    mirrors: '[{"id": "myid", "name": "myname", "mirrorOf": "myid", "url": "http://sample.com"}]'
     - name: Setup Maven 3
     # You may pin to the exact commit or the version.
     # uses: aahmed-se/setup-maven@814f5ba79a1f8c94a55a773bd53d0b618e54723b
