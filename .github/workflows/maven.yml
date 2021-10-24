@@ -60,7 +60,7 @@ jobs:
         # Docker registry username
         username: mbabu00
         # Docker registry password
-        password: Docker123$
+        #password: 
         # GitHub organization to push image to (if not current)
         #gitHubOrg: # optional
         # Adds latest tag to auto-generated GitOps tag
